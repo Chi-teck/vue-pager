@@ -12,3 +12,5 @@ Vue.component('pager', VuePager);
 <pager :total="totalPages"/>
 ```
 
+## License
+GNU General Public License, version 2.

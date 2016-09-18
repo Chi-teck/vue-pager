@@ -1,0 +1,34 @@
+body {
+  font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+form {
+  padding: 15px;
+  background-color: #eee;
+  border: solid 1px #ccc;
+  margin-bottom: 15px;
+}
+
+.form-element {
+  display: inline-block;
+}
+
+input {
+  padding: 5px;
+  width: 85px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 3px 1px;
+}

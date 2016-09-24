@@ -1,5 +1,5 @@
 var VuePager = {
-  
+
   template: 'TEMPLATE',
 
   props: {
@@ -18,7 +18,8 @@ var VuePager = {
   computed: {
 
     current: function () {
-      return parseInt(this.$route.query.page > this.total ? this.total : this.$route.query.page);
+      var page = parseInt(this.$route.query.page) || 1;
+      return page > this.total ? this.total : page;
     },
 
     middle: function () {

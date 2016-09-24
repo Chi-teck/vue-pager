@@ -9,7 +9,7 @@ Vue.component('pager', VuePager);
 ```
 
 ```html
-<pager :total="totalPages"/>
+<pager :total="totalPages"></pager>
 ```
 
 ## License

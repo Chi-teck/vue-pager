@@ -17,9 +17,13 @@ var VuePager = {
 
   computed: {
 
+    currentInQuery: function () {
+      var page = parseInt(this.$route.query.page) || 0;
+      return page >= this.total ? this.total : page;
+    },
+
     current: function () {
-      var page = parseInt(this.$route.query.page) || 1;
-      return page > this.total ? this.total : page;
+      return this.currentInQuery + 1;
     },
 
     middle: function () {
@@ -77,7 +81,7 @@ var VuePager = {
           query[param] = this.$route.query[param];
         }
       }
-      query.page = page;
+      query.page = page - 1;
       return {name: this.$route.name, query: query};
     }
   }

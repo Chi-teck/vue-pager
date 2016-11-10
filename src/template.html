@@ -19,7 +19,7 @@
     <li v-if="range.start > 1" class="pager__item pager__item--ellipsis" role="presentation">…</li>
 
     <li v-for="item in items" class="pager__item" :class="{'is-active': current == item}">
-      <router-link :to="path(item)" title="{{ current == item ? 'Current page' : 'Go to page ' + item }}">
+      <router-link :to="path(item)" :title="current == item ? 'Current page' : 'Go to page ' + item">
         <span class="visually-hidden">Page </span>{{ item }}
       </router-link>
     </li>

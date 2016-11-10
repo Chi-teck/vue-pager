@@ -14,7 +14,7 @@ var VuePager = {
       coerce: parseInt
     }
   },
-
+  
   computed: {
 
     currentInQuery: function () {
@@ -77,9 +77,7 @@ var VuePager = {
       // Clone query object to preserve other query parameters.
       var query = {};
       for (var param in this.$route.query) {
-        if (this.$route.query.hasOwnProperty(param)) {
-          query[param] = this.$route.query[param];
-        }
+        query[param] = this.$route.query[param];
       }
       query.page = page - 1;
       return {name: this.$route.name, query: query};

@@ -8,27 +8,29 @@
 </head>
 <body>
   <div id="app">
-    <router-view/>
+    <router-view></router-view>
   </div>
   <template id="index">
-    <form>
-      <div class="form-element">
-        <label for="quantity">Quantity</label>
-        <input v-model="quantity" type="number" min="1" required id="quantity">
-      </div>
-      <div class="form-element">
-        <label for="total">Total</label>
-        <input v-model="total" type="number" min="1" required id="total">
-      </div>
-      <div class="form-element">
-        <label for="current">Current</label>
-        <input v-on:input="changePage" v-model="current" type="number" min="1" required id="current">
-      </div>
-    </form>
-    <pager :quantity="quantity" :total="total"></pager>
+    <div>
+      <form>
+        <div class="form-element">
+          <label for="quantity">Quantity</label>
+          <input v-model="quantity" type="number" min="1" required id="quantity">
+        </div>
+        <div class="form-element">
+          <label for="total">Total</label>
+          <input v-model="total" type="number" min="1" required id="total">
+        </div>
+        <div class="form-element">
+          <label for="current">Current</label>
+          <input v-on:input="changePage" v-model="current" type="number" min="1" required id="current">
+        </div>
+      </form>
+      <pager :quantity="quantity" :total="total"></pager>
+    </div>
   </template>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.10/vue-router.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.1/vue-router.min.js"></script>
   <script src="../dist/vue-pager.min.js"></script>
   <script src="app.js"></script>
 </body>

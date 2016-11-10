@@ -1,4 +1,4 @@
-var Index = Vue.extend({
+var Index = {
   template: '#index',
   components: {
     'pager': VuePager
@@ -16,16 +16,20 @@ var Index = Vue.extend({
   },
   methods: {
     changePage: function (event) {
-      this.$router.go({name: 'index', query: {page: event.target.value}})
+      this.$router.push({name: 'index', query: {page: event.target.value}})
     }
   }
-});
+};
 
-new VueRouter()
-  .map({
-    '/': {
-      component: Index,
-      name: 'index'
-    }
-  })
-  .start(Vue.extend({}), '#app');
+var routes =[
+  {path: '/', component: Index, name: 'index' },
+];
+
+var router = new VueRouter({
+  routes: routes
+});
+//
+var app = new Vue({
+  router: router
+}).$mount('#app');
+

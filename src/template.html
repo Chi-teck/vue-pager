@@ -3,41 +3,41 @@
   <ul class="pager__items js-pager__items">
 
     <li v-if="current > 1" class="pager__item pager__item--first">
-      <a v-link="path(1)" title="Go to first page">
+      <router-link :to="path(1)" title="Go to first page">
         <span class="visually-hidden">First page</span>
         <span aria-hidden="true">« First</span>
-      </a>
+      </router-link>
     </li>
 
     <li v-if="current > 1" class="pager__item pager__item--previous">
-      <a v-link="path(previous)" title="Go to previous page" rel="prev">
+      <router-link :to="path(previous)" title="Go to previous page" rel="prev">
         <span class="visually-hidden">Previous page</span>
         <span aria-hidden="true">‹ Previous</span>
-      </a>
+      </router-link>
     </li>
 
     <li v-if="range.start > 1" class="pager__item pager__item--ellipsis" role="presentation">…</li>
 
     <li v-for="item in items" class="pager__item" :class="{'is-active': current == item}">
-      <a v-link="path(item)" title="{{ current == item ? 'Current page' : 'Go to page ' + item }}">
+      <router-link :to="path(item)" title="{{ current == item ? 'Current page' : 'Go to page ' + item }}">
         <span class="visually-hidden">Page </span>{{ item }}
-      </a>
+      </router-link>
     </li>
 
     <li v-if="range.finish < total" class="pager__item pager__item--ellipsis" role="presentation">…</li>
 
     <li v-if="current < total" class="pager__item pager__item--next">
-      <a v-link="path(next)" title="Go to next page" rel="next">
+      <router-link :to="path(next)" title="Go to next page" rel="next">
         <span class="visually-hidden">Next page</span>
         <span aria-hidden="true">Next ›</span>
-      </a>
+      </router-link>
     </li>
 
     <li v-if="current < total" class="pager__item pager__item--last">
-      <a v-link="path(total)" title="Go to last page">
+      <router-link :to="path(total)" title="Go to last page">
         <span class="visually-hidden">Last page</span>
         <span aria-hidden="true">Last »</span>
-      </a>
+      </router-link>
     </li>
 
   </ul>
